@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/app/decoder/receiver.py", line 41, in <module>
+    start_receiver()
+  File "/app/decoder/receiver.py", line 11, in start_receiver
+    sock.bind((UDP_IP, UDP_PORT))
+OSError: [Errno 98] Address already in use
