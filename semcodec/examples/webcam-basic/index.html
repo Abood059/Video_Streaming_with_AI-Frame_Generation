@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SemCodec Webcam Demo</title>
+  <style>
+    body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; background: #f0f0f0; }
+    .container { display: flex; gap: 20px; margin-top: 20px; }
+    .video-box { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    h3 { margin-top: 0; text-align: center; }
+    video, canvas { background: #000; border-radius: 4px; }
+    #stats { margin-top: 20px; padding: 15px; background: #222; color: #0f0; border-radius: 8px; font-family: monospace; width: 600px; }
+  </style>
+</head>
+<body>
+  <h1>SemCodec Local Loopback Demo</h1>
+  <p>Captures your webcam, encodes it to sparse payloads, and decodes it back to canvas.</p>
+  
+  <div class="container">
+    <div class="video-box">
+      <h3>Source (Webcam)</h3>
+      <video id="source" width="640" height="480" autoplay muted playsinline></video>
+    </div>
+    
+    <div class="video-box">
+      <h3>Reconstructed (Decoder Output)</h3>
+      <canvas id="output" width="640" height="480"></canvas>
+    </div>
+  </div>
+
+  <div id="stats">Waiting for camera...</div>
+
+  <!-- Note: Requires a bundler like Vite to run main.ts -->
+  <script type="module" src="./main.ts"></script>
+</body>
+</html>
